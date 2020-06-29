@@ -1,6 +1,7 @@
 ﻿namespace HueControlExampleLibrary
 {
-    class HueCue
+    public class HueCue
     {
+        public int Id { get; set; }
     }
 }
