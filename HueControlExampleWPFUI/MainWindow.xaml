@@ -1,0 +1,26 @@
+﻿<Window x:Class="HueControlExampleWPFUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HueControlExampleWPFUI"
+        mc:Ignorable="d"
+        Title="SignalR Chat WPF Client" Height="436" Width="782">
+    <Grid Margin="0,0,193.333,50.667">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="427*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="connectButton" Content="Connect" HorizontalAlignment="Left" Margin="275,63,0,0" VerticalAlignment="Top" Width="95" Click="connectButton_Click" Height="41" Grid.Column="2" />
+        <Button x:Name="sendButton" Content="Send Message" HorizontalAlignment="Left" Margin="275,113,0,0" VerticalAlignment="Top" Width="95" Click="sendButton_Click" Height="41" Grid.Column="2" IsEnabled="False"/>
+        <TextBox x:Name="messageTextBox" HorizontalAlignment="Left" Height="41" Margin="47,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <ListBox x:Name="messagesList" HorizontalAlignment="Left" Height="141" Margin="47,170,0,0" VerticalAlignment="Top" Width="311" RenderTransformOrigin="-0.304,0.109" BorderThickness="1" Grid.ColumnSpan="2" BorderBrush="Gainsboro" Grid.Column="1"/>
+        <TextBox x:Name="userTextBox" HorizontalAlignment="Left" Height="41" Margin="47,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="311" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label Content="User" HorizontalAlignment="Left" Height="31" Margin="4,63,0,0" VerticalAlignment="Top" Width="38" Grid.Column="1"/>
+        <Label Content="Message" HorizontalAlignment="Left" Height="26" Margin="19,120,0,0" VerticalAlignment="Top" Width="58" Grid.ColumnSpan="2"/>
+        <Button x:Name="cue1Button" Content="Cue 1" HorizontalAlignment="Left" Margin="275,170,0,0" VerticalAlignment="Top" Width="95" Click="Cue1Button_OnClickButton_Click" Height="41" Grid.Column="2" />
+        <Button x:Name="cue2Button" Content="Cue 2" HorizontalAlignment="Left" Margin="275,220,0,0" VerticalAlignment="Top" Width="95" Click="Cue2Button_OnClickButton_Click" Height="41" Grid.Column="2" />
+
+    </Grid>
+</Window>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HueControlExampleConsoleUI"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HueControlExampleLibrary", "HueControlExampleLibrary\HueControlExampleLibrary.csproj", "{9ED85FD5-F470-4908-ADE1-0B6CB5093D13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HueControlExampleWPFUI", "HueControlExampleWPFUI\HueControlExampleWPFUI.csproj", "{6A0B957F-FAC7-44D4-A546-885E8DD18A12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9ED85FD5-F470-4908-ADE1-0B6CB5093D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ED85FD5-F470-4908-ADE1-0B6CB5093D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ED85FD5-F470-4908-ADE1-0B6CB5093D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A0B957F-FAC7-44D4-A546-885E8DD18A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A0B957F-FAC7-44D4-A546-885E8DD18A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A0B957F-FAC7-44D4-A546-885E8DD18A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A0B957F-FAC7-44D4-A546-885E8DD18A12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
