@@ -23,7 +23,7 @@ namespace HueControlExampleWPFUI
             InitializeComponent();
 
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:53353/ChatHub")
+                .WithUrl("https://huesignalrserverexampleui-olaafrossi.azurewebsites.net/ChatHub")
                 .Build();
 
             #region snippet_ClosedRestart
