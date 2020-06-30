@@ -55,7 +55,6 @@ namespace HueControlExampleWPFUI
                 });
             });
 
-
             try
             {
                 await connection.StartAsync();
@@ -99,6 +98,7 @@ namespace HueControlExampleWPFUI
 
             Console.WriteLine("Ran some lights");
         }
+
         //async static Task Register()
         //{
         //    string ip = "192.168.1.160";
