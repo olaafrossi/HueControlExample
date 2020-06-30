@@ -11,7 +11,7 @@ namespace HueControlExampleConsoleUI
 {
     class Program
     {
-        static public void Main(string[] args)
+        public static void Main(string[] args)
         {
 
             // Doesn't need to register
@@ -33,7 +33,7 @@ namespace HueControlExampleConsoleUI
 
        
 
-        async static Task RunLightCommand()
+        static async Task RunLightCommand()
         {
             LocalHueClient client = await HueManager.GetClient();
 
