@@ -26,7 +26,8 @@ namespace HueControlExampleWPFUI
             InitializeComponent();
 
             connection = new HubConnectionBuilder()
-                .WithUrl("https://huesignalrserverexampleui-olaafrossi.azurewebsites.net/ChatHub")
+                .WithUrl("https://huecontrolwebassemblyexampleserve-olaafrossi.azurewebsites.net/ChatHub")
+                .WithAutomaticReconnect()
                 .Build();
 
             connection.Closed += async (error) =>
