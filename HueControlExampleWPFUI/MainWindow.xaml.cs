@@ -9,6 +9,8 @@ using System;
 using System.Windows;
 using System.Threading;
 using System.Threading.Tasks;
+using Q42.HueApi.ColorConverters;
+using Q42.HueApi.ColorConverters.HSB;
 
 namespace HueControlExampleWPFUI
 {
@@ -45,7 +47,6 @@ namespace HueControlExampleWPFUI
                     var newMessage = $"{user}: {message}";
                     messagesList.Items.Add(newMessage);
                     if (message == "1" )
-
                     {
                         RunLightCommand01();
                     }
@@ -75,10 +76,8 @@ namespace HueControlExampleWPFUI
             #region snippet_ErrorHandling
             try
             {
-                #region snippet_InvokeAsync
                 await connection.InvokeAsync("SendMessage",
                     userTextBox.Text, messageTextBox.Text);
-                #endregion
             }
             catch (Exception ex)
             {
@@ -111,9 +110,7 @@ namespace HueControlExampleWPFUI
         //    var appKey = await client.RegisterAsync("Project", "CYME6zExAy7IznAFHjHzhhCUyHPq-nYlHN5-eJDW");
         //}
 
-
-
-        async static Task RunLightCommand01()
+        static async Task RunLightCommand01()
         {
             LocalHueClient client = await HueManager.GetClient();
 
@@ -125,7 +122,7 @@ namespace HueControlExampleWPFUI
             var command = new LightCommand();
 
             // some random settings for tests
-            command.SetColor(255);
+            command.SetColor(new RGBColor(255, 0, 0));
             client.SendCommandAsync(command);
             Thread.Sleep(1000);
             command.TurnOff();
@@ -140,11 +137,14 @@ namespace HueControlExampleWPFUI
             command.TurnOn();
             client.SendCommandAsync(command);
             Thread.Sleep(1000);
-            command.SetColor(100);
+            //command.SetColor(100);
+            //client.SendCommandAsync(command);
+            Thread.Sleep(1000);
+            command.SetColor(new RGBColor(0,255,0));
             client.SendCommandAsync(command);
         }
 
-        async static Task RunLightCommand02()
+        static async Task RunLightCommand02()
         {
             LocalHueClient client = await HueManager.GetClient();
 
@@ -156,7 +156,7 @@ namespace HueControlExampleWPFUI
             var command = new LightCommand();
 
             // some random settings for tests
-            command.SetColor(700);
+            command.SetColor(new RGBColor(255, 255, 255));
             client.SendCommandAsync(command);
             Thread.Sleep(1000);
             command.TurnOff();
@@ -171,7 +171,7 @@ namespace HueControlExampleWPFUI
             command.TurnOn();
             client.SendCommandAsync(command);
             Thread.Sleep(1000);
-            command.SetColor(900);
+            command.SetColor(new RGBColor(127, 0, 255));
             client.SendCommandAsync(command);
         }
 
