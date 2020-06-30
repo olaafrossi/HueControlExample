@@ -20,6 +20,7 @@ namespace HueControlExampleWPFUI
     public partial class MainWindow : Window
     {
         HubConnection connection;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,18 +29,15 @@ namespace HueControlExampleWPFUI
                 .WithUrl("https://huesignalrserverexampleui-olaafrossi.azurewebsites.net/ChatHub")
                 .Build();
 
-            #region snippet_ClosedRestart
             connection.Closed += async (error) =>
             {
                 await Task.Delay(new Random().Next(0, 5) * 1000);
                 await connection.StartAsync();
             };
-            #endregion
         }
 
         private async void connectButton_Click(object sender, RoutedEventArgs e)
         {
-            #region snippet_ConnectionOn
             connection.On<string, string>("ReceiveMessage", (user, message) =>
             {
                 this.Dispatcher.Invoke(() =>
@@ -56,7 +54,7 @@ namespace HueControlExampleWPFUI
                     }
                 });
             });
-            #endregion
+
 
             try
             {
@@ -73,7 +71,6 @@ namespace HueControlExampleWPFUI
 
         private async void sendButton_Click(object sender, RoutedEventArgs e)
         {
-            #region snippet_ErrorHandling
             try
             {
                 await connection.InvokeAsync("SendMessage",
@@ -83,7 +80,6 @@ namespace HueControlExampleWPFUI
             {
                 messagesList.Items.Add(ex.Message);
             }
-            #endregion
         }
 
         private void Cue1Button_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -174,7 +170,6 @@ namespace HueControlExampleWPFUI
             command.SetColor(new RGBColor(127, 0, 255));
             client.SendCommandAsync(command);
         }
-
     }
 }
 
